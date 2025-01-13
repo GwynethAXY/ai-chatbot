@@ -3,7 +3,6 @@ import type {
     CreateMessage,
     Message,
   } from 'ai';
-  import { formatDistance } from 'date-fns';
   import { AnimatePresence, motion } from 'framer-motion';
   import {
     type Dispatch,
@@ -17,7 +16,7 @@ import type {
   import { useDebounceCallback, useWindowSize } from 'usehooks-ts';
   
   import type { Document, Suggestion } from '@/lib/db/schema';
-  import { cn, fetcher } from '@/lib/utils';
+  import { fetcher } from '@/lib/utils';
   
   import { MultimodalInput } from './multimodal-input';
   import { BlockMessages } from './block-messages';
