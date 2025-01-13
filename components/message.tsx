@@ -3,7 +3,7 @@
 import type { ChatRequestOptions, Message } from 'ai';
 import cx from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
-import { memo, useMemo, useState } from 'react';
+import { memo } from 'react';
 import { SparklesIcon } from './icons';
 import { Markdown } from './markdown';
 import { MessageActions } from './message-actions';
@@ -14,8 +14,6 @@ const PurePreviewMessage = ({
   chatId,
   message,
   isLoading,
-  setMessages,
-  reload,
   isReadonly,
 }: {
   chatId: string;
@@ -71,7 +69,7 @@ const PurePreviewMessage = ({
 {message.toolInvocations && message.toolInvocations.length > 0 && (
               <div className="flex flex-col gap-4">
                 {message.toolInvocations.map((toolInvocation) => {
-                  const { toolName, toolCallId, state, args } = toolInvocation;
+                  const { state } = toolInvocation;
 
                   if (state === 'result') {
                     const { result } = toolInvocation;

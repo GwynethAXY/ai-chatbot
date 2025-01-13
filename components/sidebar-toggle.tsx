@@ -11,7 +11,6 @@ import { SidebarLeftIcon } from './icons';
 import { Button } from './ui/button';
 
 export function SidebarToggle({
-  className,
 }: ComponentProps<typeof SidebarTrigger>) {
   const { toggleSidebar } = useSidebar();
 
